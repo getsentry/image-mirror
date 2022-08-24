@@ -1,0 +1,16 @@
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: docker login --username "$DOCKER_USER" --password "$DOCKER_PASS" ghcr.io
+      env:
+        DOCKER_USER: ${{ github.actor }}
+        DOCKER_PASS: ${{ secrets.GITHUB_TOKEN }}
+      if: github.event_name != 'pull_request'
+    - run: python3 -uSm main sync ${{ github.event_name == 'pull_request' && '--dry-run' || '' }}
