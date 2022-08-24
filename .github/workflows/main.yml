@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: docker login --username "$DOCKER_USER" --password "$DOCKER_PASS" ghcr.io
+    - run: podman login --username "$DOCKER_USER" --password "$DOCKER_PASS" ghcr.io
       env:
         DOCKER_USER: ${{ github.actor }}
         DOCKER_PASS: ${{ secrets.GITHUB_TOKEN }}

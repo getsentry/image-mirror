@@ -189,8 +189,8 @@ def main() -> int:
                 src = f'{img.registry}/{img.source}@{digest}'
                 dest = f'ghcr.io/{dest_img}:{img.tag}'
 
-                subprocess.check_call(('docker', 'pull', src))
-                subprocess.check_call(('docker', 'push', src, dest))
+                subprocess.check_call(('podman', 'pull', src))
+                subprocess.check_call(('podman', 'push', src, dest))
     else:
         raise NotImplementedError(args.command)
 
