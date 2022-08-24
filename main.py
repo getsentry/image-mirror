@@ -106,6 +106,74 @@ class Image(NamedTuple):
 IMAGES = (
     Image(
         registry='registry-1.docker.io',
+        source='confluentinc/cp-zookeeper',
+        tag='6.2.0',
+        digests=(
+            'sha256:9a69c03fd1757c3154e4f64450d0d27a6decb0dc3a1e401e8fc38e5cea881847',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='getsentry/cdc',
+        tag='nightly',
+        digests=(
+            'sha256:d3186fd33583fa3a235cf00543db39b12cf9b9f6ee6d092326df3df087e1543c',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='getsentry/snuba',
+        tag='nightly',
+        digests=(
+            'sha256:b29179f158920e52908b5d7a28b553a39a50d8b4f28c6193d81a0cf22af04f7e',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/memcached',
+        tag='1.5-alpine',
+        digests=(
+            'sha256:48cb7207e3d34871893fa1628f3a4984375153e9942facf82e25935b0a633c8a',  # noqa: E501
+            'sha256:fab6966ea6418a38663d63aa904b4de729cdf51cd90c22a70ea4d234cb4b37a4',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/postgres',
+        tag='14',
+        digests=(
+            'sha256:8d46fa657b46fb96a707b3dff90ff95014476874a96389f0370c1c2a2846f249',  # noqa: E501
+            'sha256:5879899ee1a511ff279c29625e0b1dd5ecab995c712e1028a6d1f68e7bbafd0e',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/postgres',
+        tag='9.6',
+        digests=(
+            'sha256:15055f7b681334cbf0212b58e510148b1b23973639e3904260fb41fa0761a103',  # noqa: E501
+            'sha256:decbf20be3383f2ba0cfcf67addd5b635d442b4739132e666ed407b6f98abfc6',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/redis',
+        tag='5.0-alpine',
+        digests=(
+            'sha256:afa291c12b204f583d79cf59917f9110374bce065494b81a373c97d55a8964a7',  # noqa: E501
+            'sha256:9d718636ce6d01643f88ab86f8091a8eedb8513c72e7979f402db2488e9c9592',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='yandex/clickhouse-server',
+        tag='20.3.9.70',
+        digests=(
+            'sha256:932ef73994dd4b6507a55a288c5ee065aae8e77e61ee569512a76a65eddbe2c3',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='altinity/clickhouse-server',
         tag='21.6.1.6734-testing-arm',
         digests=(
