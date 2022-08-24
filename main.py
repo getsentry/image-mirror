@@ -236,7 +236,7 @@ def main() -> int:
             try:
                 target_digest_info = _digests('ghcr.io', dest_img, img.tag)
             except urllib.error.HTTPError as e:
-                if e.code != 403:
+                if e.code not in {403, 404}:
                     raise
                 else:
                     target_digest_info = []
