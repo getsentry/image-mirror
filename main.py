@@ -57,7 +57,7 @@ def _digests(registry: str, image: str, tag: str) -> list[tuple[str, str]]:
     token = json.load(urllib.request.urlopen(auth_url))['token']
 
     req = urllib.request.Request(
-        f'https://registry-1.docker.io/v2/{image}/manifests/{tag}',
+        f'https://{registry}/v2/{image}/manifests/{tag}',
         headers={
             'Authorization': f'Bearer {token}',
             # annoyingly, even if we only "Accept" the list, docker.io will
@@ -75,7 +75,7 @@ def _digests(registry: str, image: str, tag: str) -> list[tuple[str, str]]:
     elif resp.headers['Content-Type'] == SINGLE:
         blob = ret['config']['digest']
         req = urllib.request.Request(
-            f'https://registry-1.docker.io/v2/{image}/blobs/{blob}',
+            f'https://{registry}/v2/{image}/blobs/{blob}',
             headers={'Authorization': f'Bearer {token}'},
         )
         ret = json.load(urllib.request.urlopen(req))
@@ -189,8 +189,9 @@ def main() -> int:
                 src = f'{img.registry}/{img.source}@{digest}'
                 dest = f'ghcr.io/{dest_img}:{img.tag}'
 
-                subprocess.check_call(('podman', 'pull', src))
-                subprocess.check_call(('podman', 'push', src, dest))
+                subprocess.check_call(('docker', 'pull', src))
+                subprocess.check_call(('docker', 'tag', src, dest))
+                subprocess.check_call(('docker', 'push', dest))
     else:
         raise NotImplementedError(args.command)
 
