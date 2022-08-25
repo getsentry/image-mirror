@@ -264,20 +264,25 @@ def main() -> int:
             if not todo:
                 continue
             elif args.dry_run:
-                print(f'would sync {img.display}:')
-                for digest in todo:
-                    print(f'- {digest}')
+                print(f'would sync {img.display}...')
                 continue
             else:
                 print(f'syncing {img.display}...')
 
-            for digest in todo:
+            manifest = f'ghcr.io/{dest_img}:{img.tag}'
+            for i, digest in enumerate(img.digests):
                 src = f'{img.registry}/{img.source}@{digest}'
-                dest = f'ghcr.io/{dest_img}:{img.tag}'
+                dest = f'{manifest}-digest{i}'
 
-                subprocess.check_call(('docker', 'pull', src))
+                subprocess.check_call(('docker', 'pull', '--quiet', src))
                 subprocess.check_call(('docker', 'tag', src, dest))
-                subprocess.check_call(('docker', 'push', dest))
+                subprocess.check_call(('docker', 'push', '--quiet', dest))
+
+            subprocess.check_call((
+                'docker', 'manifest', 'create', manifest,
+                *(f'{manifest}-digest{i}' for i in range(len(img.digests))),
+            ))
+            subprocess.check_call(('docker', 'manifest', 'push', manifest))
     else:
         raise NotImplementedError(args.command)
 
