@@ -106,6 +106,22 @@ class Image(NamedTuple):
 IMAGES = (
     Image(
         registry='registry-1.docker.io',
+        source='altinity/clickhouse-server',
+        tag='21.6.1.6734-testing-arm',
+        digests=(
+            'sha256:9a4516444fef9e0f11ee6b2de716d3b97b36bf05d9cc2d44c4596cfb0584dea6',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='confluentinc/cp-kafka',
+        tag='6.2.0',
+        digests=(
+            'sha256:97f572d93c6b2d388c5dadd644a90990ec29e42e5652c550c84d1a9be9d6dcbd',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='confluentinc/cp-zookeeper',
         tag='6.2.0',
         digests=(
@@ -125,7 +141,7 @@ IMAGES = (
         source='getsentry/snuba',
         tag='nightly',
         digests=(
-            'sha256:b29179f158920e52908b5d7a28b553a39a50d8b4f28c6193d81a0cf22af04f7e',  # noqa: E501
+            'sha256:b5a2f1ed47817e5ec4123aba6956307af226e678b4337acff0851878c526d6f7',  # noqa: E501
         ),
     ),
     Image(
@@ -149,10 +165,28 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='library/postgres',
+        tag='14-alpine',
+        digests=(
+            'sha256:9ece045f37060bf6b0a36ffbd5afa4f56636370791abae5062ed6005ec0e5110',  # noqa: E501
+            'sha256:e97eb31702960842df1aa23e2ac908575682b8a6991ee3210814302c1855a3ec',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/postgres',
         tag='9.6',
         digests=(
             'sha256:15055f7b681334cbf0212b58e510148b1b23973639e3904260fb41fa0761a103',  # noqa: E501
             'sha256:decbf20be3383f2ba0cfcf67addd5b635d442b4739132e666ed407b6f98abfc6',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/postgres',
+        tag='9.6-alpine',
+        digests=(
+            'sha256:84e6f6c787244669a874be441f44a64256a7f1d08d49505bd03cfc3c687b6cfd',  # noqa: E501
+            'sha256:2cde527ea258b21a2966bd18a604b320bc89b47f378ca75cb57596c5a2d4f2c5',  # noqa: E501
         ),
     ),
     Image(
@@ -170,22 +204,6 @@ IMAGES = (
         tag='20.3.9.70',
         digests=(
             'sha256:932ef73994dd4b6507a55a288c5ee065aae8e77e61ee569512a76a65eddbe2c3',  # noqa: E501
-        ),
-    ),
-    Image(
-        registry='registry-1.docker.io',
-        source='altinity/clickhouse-server',
-        tag='21.6.1.6734-testing-arm',
-        digests=(
-            'sha256:9a4516444fef9e0f11ee6b2de716d3b97b36bf05d9cc2d44c4596cfb0584dea6',  # noqa: E501
-        ),
-    ),
-    Image(
-        registry='registry-1.docker.io',
-        source='confluentinc/cp-kafka',
-        tag='6.2.0',
-        digests=(
-            'sha256:97f572d93c6b2d388c5dadd644a90990ec29e42e5652c550c84d1a9be9d6dcbd',  # noqa: E501
         ),
     ),
 )
@@ -222,7 +240,7 @@ def main() -> int:
         with open(__file__) as f:
             src = f.read()
 
-        src = re.sub(r'IMGS = \(\n( +.+\n)+\)', '\n'.join(lines), src)
+        src = re.sub(r'IMAGES = \(\n( +.+\n)+\)', '\n'.join(lines), src)
 
         if args.dry_run:
             print(src)
@@ -246,20 +264,25 @@ def main() -> int:
             if not todo:
                 continue
             elif args.dry_run:
-                print(f'would sync {img.display}:')
-                for digest in todo:
-                    print(f'- {digest}')
+                print(f'would sync {img.display}...')
                 continue
             else:
                 print(f'syncing {img.display}...')
 
-            for digest in todo:
+            manifest = f'ghcr.io/{dest_img}:{img.tag}'
+            for i, digest in enumerate(img.digests):
                 src = f'{img.registry}/{img.source}@{digest}'
-                dest = f'ghcr.io/{dest_img}:{img.tag}'
+                dest = f'{manifest}-digest{i}'
 
-                subprocess.check_call(('docker', 'pull', src))
+                subprocess.check_call(('docker', 'pull', '--quiet', src))
                 subprocess.check_call(('docker', 'tag', src, dest))
-                subprocess.check_call(('docker', 'push', dest))
+                subprocess.check_call(('docker', 'push', '--quiet', dest))
+
+            subprocess.check_call((
+                'docker', 'manifest', 'create', manifest,
+                *(f'{manifest}-digest{i}' for i in range(len(img.digests))),
+            ))
+            subprocess.check_call(('docker', 'manifest', 'push', manifest))
     else:
         raise NotImplementedError(args.command)
 
