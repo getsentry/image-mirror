@@ -130,22 +130,6 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
-        source='getsentry/cdc',
-        tag='nightly',
-        digests=(
-            'sha256:d3186fd33583fa3a235cf00543db39b12cf9b9f6ee6d092326df3df087e1543c',  # noqa: E501
-        ),
-    ),
-    Image(
-        registry='registry-1.docker.io',
-        source='getsentry/snuba',
-        tag='nightly',
-        digests=(
-            'sha256:b5a2f1ed47817e5ec4123aba6956307af226e678b4337acff0851878c526d6f7',  # noqa: E501
-        ),
-    ),
-    Image(
-        registry='registry-1.docker.io',
         source='library/memcached',
         tag='1.5-alpine',
         digests=(
