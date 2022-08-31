@@ -114,6 +114,14 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='checkr/flagr',
+        tag='latest',
+        digests=(
+            'sha256:407d7099d6ce7e3632b6d00682a43028d75d3b088600797a833607bd629d1ed5',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='confluentinc/cp-kafka',
         tag='6.2.0',
         digests=(
