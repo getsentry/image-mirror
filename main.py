@@ -106,19 +106,18 @@ class Image(NamedTuple):
 IMAGES = (
     Image(
         registry='registry-1.docker.io',
-        source='checkr/flagr',
-        tag='latest',
+        source='altinity/clickhouse-server',
+        tag='21.6.1.6734-testing-arm',
         digests=(
-            'sha256:407d7099d6ce7e3632b6d00682a43028d75d3b088600797a833607bd629d1ed5',  # noqa: E501
+            'sha256:9a4516444fef9e0f11ee6b2de716d3b97b36bf05d9cc2d44c4596cfb0584dea6',  # noqa: E501
         ),
     ),
     Image(
         registry='registry-1.docker.io',
-        source='clickhouse/clickhouse-server',
-        tag='22.12.3.5-alpine',
+        source='checkr/flagr',
+        tag='latest',
         digests=(
-            'sha256:d2089e7c3d3883a87f78ec8b3b99e91fa50d679e7c5440eaef05436f14c460a0',  # noqa: E501
-            'sha256:6b1167fda17a999de805bac728aecdbbd48dfd3f542d6ef10274ed3fc514d5f1',  # noqa: E501
+            'sha256:407d7099d6ce7e3632b6d00682a43028d75d3b088600797a833607bd629d1ed5',  # noqa: E501
         ),
     ),
     Image(
@@ -189,6 +188,14 @@ IMAGES = (
         digests=(
             'sha256:afa291c12b204f583d79cf59917f9110374bce065494b81a373c97d55a8964a7',  # noqa: E501
             'sha256:9d718636ce6d01643f88ab86f8091a8eedb8513c72e7979f402db2488e9c9592',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='yandex/clickhouse-server',
+        tag='20.3.9.70',
+        digests=(
+            'sha256:932ef73994dd4b6507a55a288c5ee065aae8e77e61ee569512a76a65eddbe2c3',  # noqa: E501
         ),
     ),
 )
