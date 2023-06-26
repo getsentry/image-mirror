@@ -183,6 +183,15 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='library/rabbitmq',
+        tag='3-management',
+        digests=(
+            'sha256:74470f3aa108cc2dc2aaaa7c5cc5ec3d7b282d30e4037185fe2720a85b42a116',  # noqa: E501
+            'sha256:c80c4d52e1f8bb8327dbee806894db94f2a2fbc31e9ecace5da1dce67ec8a5ad',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='library/redis',
         tag='5.0-alpine',
         digests=(
