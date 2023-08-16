@@ -1,1 +1,14 @@
 https://github.com/confluentinc/kafka-images/tree/5.5.13-post/zookeeper
+
+yeah... it'd be pretty hard to build.
+
+docker-buildx build -f Dockerfile.ubi8 --build-arg=CONFLUENT_PACKAGES_REPO=https://packages.confluent.io/rpm/5.5 --build-arg=CONFLUENT_VERSION=5.5.13 --build-arg=SCALA_VERSION=2.12 .
+
+I got this far and:
+
+```
+47.07 zulu-openjdk - Azul Systems Inc., Zulu packages 0.0  B/s |   0  B     00:40
+47.07 Errors during downloading metadata for repository 'zulu-openjdk':
+47.07   - Curl error (6): Couldn't resolve host name for https://repos.azul.com/zulu/rpm/repodata/repomd.xml [Could not resolve host: repos.azul.com]
+47.09 Error: Failed to download metadata for repo 'zulu-openjdk': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+```
