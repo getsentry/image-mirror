@@ -131,25 +131,9 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='confluentinc/cp-kafka',
-        tag='5.5.13-1-ubi8',
-        digests=(
-            'sha256:5da5ef4d763574d42d81be5bba1df192a30da8e34ec33daaa54bd1046f19e36a',  # noqa: E501
-        ),
-    ),
-    Image(
-        registry='registry-1.docker.io',
-        source='confluentinc/cp-kafka',
         tag='6.2.0',
         digests=(
             'sha256:97f572d93c6b2d388c5dadd644a90990ec29e42e5652c550c84d1a9be9d6dcbd',  # noqa: E501
-        ),
-    ),
-    Image(
-        registry='registry-1.docker.io',
-        source='confluentinc/cp-zookeeper',
-        tag='5.5.13-1-ubi8',
-        digests=(
-            'sha256:ad410ca75d779512abc7255a8360813c5860bddbf438497937c2a37d9618ce95',  # noqa: E501
         ),
     ),
     Image(
@@ -174,8 +158,8 @@ IMAGES = (
         source='library/postgres',
         tag='14',
         digests=(
-            'sha256:55247e19106a3998b54d8f06d0c5070285a7f47b20f34a56c23ed9a75573d0e5',  # noqa: E501
-            'sha256:1050153f46ad3fa89c27f3002e6ebf15fef0ceedf1d21f49a982e1364a6c2e3d',  # noqa: E501
+            'sha256:a59d051c8e11fe524565b6fac352529561a4ab7662a1ab9fc2113fe95e7bf811',  # noqa: E501
+            'sha256:771558fb2f87b91dbe90882ac6f69b61bb31d0c942f043ba6025965aedfd0e29',  # noqa: E501
         ),
     ),
     Image(
@@ -183,8 +167,8 @@ IMAGES = (
         source='library/postgres',
         tag='14-alpine',
         digests=(
-            'sha256:4a0c9e5e23520c3403abf81b4f74b8f820f5f5e64654f51f5e4c92ece160a519',  # noqa: E501
-            'sha256:5a7565060898c9fd7629bb415697093d34a51ed381f5e7f23e2398fdfa4389ac',  # noqa: E501
+            'sha256:df33047f21cb41298b51e17b9ac56a30362d5144d4bf9501d47aa768d59b6a9b',  # noqa: E501
+            'sha256:5ecfb3b719c4b439f846f2be3e44892cc1425917297c65ad654710504fd470a3',  # noqa: E501
         ),
     ),
     Image(
@@ -230,6 +214,15 @@ IMAGES = (
         digests=(
             'sha256:87583c95fd2253658fdd12e765addbd2126879af86a90b34efc09457486b21b1',  # noqa: E501
             'sha256:2577ec9ba2a7a6f10a686b8e2cd354ee4e1a05688374cdc566c1427516d47c8f',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='redpandadata/redpanda',
+        tag='v22.3.23',
+        digests=(
+            'sha256:5bb4da6e91eeaeecc693289bcc5fa91c46dc68b3b128e878bb7d2a221ad65c3b',  # noqa: E501
+            'sha256:22fbd63c5b7480c584fe6f3408e92cad01e2d1c2b47128e680146ce9a2500d52',  # noqa: E501
         ),
     ),
     Image(
