@@ -12,7 +12,7 @@ import urllib.request
 from typing import Mapping
 from typing import NamedTuple
 
-ARCHS = frozenset(('amd64', 'arm64'))
+ARCHS = frozenset(('amd64', 'arm64', 'arm64/v8'))
 
 LIST = 'application/vnd.docker.distribution.manifest.list.v2+json'
 SINGLE = 'application/vnd.docker.distribution.manifest.v2+json'
