@@ -16,6 +16,7 @@ ARCHS = frozenset(('amd64', 'arm64', 'arm64/v8'))
 
 LIST = 'application/vnd.docker.distribution.manifest.list.v2+json'
 SINGLE = 'application/vnd.docker.distribution.manifest.v2+json'
+INDEX = 'application/vnd.oci.image.index.v1+json'
 
 
 def _parse_auth_header(s: str) -> dict[str, str]:
@@ -62,12 +63,12 @@ def _digests(registry: str, image: str, tag: str) -> list[tuple[str, str]]:
             'Authorization': f'Bearer {token}',
             # annoyingly, even if we only "Accept" the list, docker.io will
             # send us a single manifest
-            'Accept': f'{LIST}, {SINGLE};q=.9',
+            'Accept': f'{LIST}, {INDEX}, {SINGLE};q=.9',
         },
     )
     resp = urllib.request.urlopen(req)
     ret = json.load(resp)
-    if resp.headers['Content-Type'] == LIST:
+    if resp.headers['Content-Type'] in {LIST, INDEX}:
         return [
             (manifest['platform']['architecture'], manifest['digest'])
             for manifest in ret['manifests']
@@ -147,18 +148,18 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='confluentinc/cp-kafka',
-        tag='7.5.0',
+        tag='6.2.0',
         digests=(
-            'sha256:69022c46b7f4166ecf21689ab4c20d030b0a62f2d744c20633abfc7c0040fa80',  # noqa: E501
-            'sha256:ba503c5f09291265b253f2c299573d96433b05b930c2732f5c13b82056c824dd',  # noqa: E501
+            'sha256:97f572d93c6b2d388c5dadd644a90990ec29e42e5652c550c84d1a9be9d6dcbd',  # noqa: E501
         ),
     ),
     Image(
         registry='registry-1.docker.io',
         source='confluentinc/cp-kafka',
-        tag='6.2.0',
+        tag='7.5.0',
         digests=(
-            'sha256:97f572d93c6b2d388c5dadd644a90990ec29e42e5652c550c84d1a9be9d6dcbd',  # noqa: E501
+            'sha256:69022c46b7f4166ecf21689ab4c20d030b0a62f2d744c20633abfc7c0040fa80',  # noqa: E501
+            'sha256:ba503c5f09291265b253f2c299573d96433b05b930c2732f5c13b82056c824dd',  # noqa: E501
         ),
     ),
     Image(
@@ -183,8 +184,8 @@ IMAGES = (
         source='library/postgres',
         tag='14',
         digests=(
-            'sha256:a59d051c8e11fe524565b6fac352529561a4ab7662a1ab9fc2113fe95e7bf811',  # noqa: E501
-            'sha256:771558fb2f87b91dbe90882ac6f69b61bb31d0c942f043ba6025965aedfd0e29',  # noqa: E501
+            'sha256:8769dc9a6cc47201df7112475f22c400cd734880b51511efbd2b581f19ebb59a',  # noqa: E501
+            'sha256:2c301a800817b23763b976b80e7c3579284afcc9d9ff6f968ecb524da48383a1',  # noqa: E501
         ),
     ),
     Image(
@@ -192,8 +193,8 @@ IMAGES = (
         source='library/postgres',
         tag='14-alpine',
         digests=(
-            'sha256:df33047f21cb41298b51e17b9ac56a30362d5144d4bf9501d47aa768d59b6a9b',  # noqa: E501
-            'sha256:5ecfb3b719c4b439f846f2be3e44892cc1425917297c65ad654710504fd470a3',  # noqa: E501
+            'sha256:8dc41c1f358669e2006559bc817cd7c1daaa328d1ee8370ac209167f3b6a894f',  # noqa: E501
+            'sha256:583063ce031a46cdff262cdd88f22c15a829ce5814957946ccfdf20ef66d2de6',  # noqa: E501
         ),
     ),
     Image(
@@ -219,8 +220,8 @@ IMAGES = (
         source='library/rabbitmq',
         tag='3-management',
         digests=(
-            'sha256:74470f3aa108cc2dc2aaaa7c5cc5ec3d7b282d30e4037185fe2720a85b42a116',  # noqa: E501
-            'sha256:c80c4d52e1f8bb8327dbee806894db94f2a2fbc31e9ecace5da1dce67ec8a5ad',  # noqa: E501
+            'sha256:e2de39b422da7d4b71b956f786b0231493b5c52cd2879b3bba1993a2037d3498',  # noqa: E501
+            'sha256:6a8a10b97d1902b2a5edc1179640329767609d3fc21a2893e0ad96e778de1452',  # noqa: E501
         ),
     ),
     Image(
