@@ -12,7 +12,7 @@ import urllib.request
 from typing import Mapping
 from typing import NamedTuple
 
-ARCHS = frozenset(('amd64', 'arm64'))
+ARCHS = frozenset(('amd64', 'arm64', 'arm64/v8'))
 
 LIST = 'application/vnd.docker.distribution.manifest.list.v2+json'
 SINGLE = 'application/vnd.docker.distribution.manifest.v2+json'
@@ -119,6 +119,23 @@ IMAGES = (
         tag='21.8.13.1.altinitystable',
         digests=(
             'sha256:125d2ea49c298515c46784d202a2bd4dde05157c85a76517afc2567f262ab335',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='altinity/clickhouse-server',
+        tag='22.3.15.34.altinitystable',
+        digests=(
+            'sha256:5a67ec149acc13e3d87ed1e3b94b4ada6f0acdc75145724959bbd8c0a6f18410',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='altinity/clickhouse-server',
+        tag='22.8.15.25.altinitystable',
+        digests=(
+            'sha256:99d52fc10915136234a3b902b16d53f0ee80cd4f9149064acc30c89e54d06cf9',  # noqa: E501
+            'sha256:2935d3849fcdf3c9a24883522630758a6f017c7b48a252f6e54e8fc188ccd0cc',  # noqa: E501
         ),
     ),
     Image(
