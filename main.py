@@ -149,6 +149,14 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='confluentinc/cp-kafka',
+        tag='5.1.2',
+        digests=(
+            'sha256:c5ff41b494329e9dea0f2d2d942a391a8d5968f597e9ba4a10846f511ba85220',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='confluentinc/cp-kafka',
         tag='6.2.0',
         digests=(
             'sha256:97f572d93c6b2d388c5dadd644a90990ec29e42e5652c550c84d1a9be9d6dcbd',  # noqa: E501
@@ -161,6 +169,14 @@ IMAGES = (
         digests=(
             'sha256:69022c46b7f4166ecf21689ab4c20d030b0a62f2d744c20633abfc7c0040fa80',  # noqa: E501
             'sha256:ba503c5f09291265b253f2c299573d96433b05b930c2732f5c13b82056c824dd',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='confluentinc/cp-zookeeper',
+        tag='5.1.2',
+        digests=(
+            'sha256:c63871c17b038e1685bf708e7bc2d32ae518f40137c86a6148fbdcdd1c78fe83',  # noqa: E501
         ),
     ),
     Image(
