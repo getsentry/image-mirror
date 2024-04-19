@@ -210,10 +210,10 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='library/postgres',
-        tag='14-alpine',
+        tag='14-alpine',  # 14.11
         digests=(
-            'sha256:8dc41c1f358669e2006559bc817cd7c1daaa328d1ee8370ac209167f3b6a894f',  # noqa: E501
-            'sha256:583063ce031a46cdff262cdd88f22c15a829ce5814957946ccfdf20ef66d2de6',  # noqa: E501
+            'sha256:72b17e06ac53e62495270c850c1dd289580fca05491bcac45cd43c0c8047b6ef',  # noqa: E501
+            'sha256:ac4ca373551069f5cceb157bc4ba7fefc67069f3cf7dfb96fa3fbfece9888d5f',  # noqa: E501
         ),
     ),
     Image(
