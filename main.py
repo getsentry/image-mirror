@@ -212,8 +212,8 @@ IMAGES = (
         source='library/postgres',
         tag='14-alpine',  # 14.11
         digests=(
-            'sha256:36ac395a179b1a85d528670839d9e5787a690ec672ee9ff087ada5ddd8db798a',  # noqa: E501
-            'sha256:36ac395a179b1a85d528670839d9e5787a690ec672ee9ff087ada5ddd8db798a',  # noqa: E501
+            'sha256:72b17e06ac53e62495270c850c1dd289580fca05491bcac45cd43c0c8047b6ef',  # noqa: E501
+            'sha256:ac4ca373551069f5cceb157bc4ba7fefc67069f3cf7dfb96fa3fbfece9888d5f',  # noqa: E501
         ),
     ),
     Image(
