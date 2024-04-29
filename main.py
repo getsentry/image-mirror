@@ -150,6 +150,15 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='altinity/clickhouse-server',
+        tag='23.3.19.33.altinitystable',
+        digests=(
+            'sha256:6cc967d9474eea8c92c765b177b886ee6789d59d041d58ce5bfb4b3e79f0ad73',  # noqa: E501
+            'sha256:10c02dc8e418ec9de8b71718846d45d43fb1b74225b936d9a695fe1bdac737d3',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='altinity/clickhouse-server',
         tag='23.8.8.21.altinitystable',
         digests=(
             'sha256:0a2c4b9cc0bb16fd67f59329a96b7241d96ab003b8825236e341007850848fe6',  # noqa: E501
