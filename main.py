@@ -188,7 +188,8 @@ IMAGES = (
         source='altinity/clickhouse-server',
         tag='24.8.11.51285.altinitystable',
         digests=(
-            'sha256:694d6cce8ed63a4d2677d571f8399a73a53a6e070a7b3555bb551ece522dc649',
+            'sha256:65b4fed146dd9fa4fc7b0eff17adbeb3c1eb3e5d3c37fc2f635913eafc22b7a5',  # noqa: E501
+            'sha256:9730299fc9d9728e5e23a266e54a65d267acd565301fbb3d21092f2c6c3f0ea3',  # noqa: E501
         ),
     ),
     Image(
