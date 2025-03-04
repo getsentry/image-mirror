@@ -159,6 +159,15 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='altinity/clickhouse-server',
+        tag='23.8.8.21.altinitystable',
+        digests=(
+            'sha256:0a2c4b9cc0bb16fd67f59329a96b7241d96ab003b8825236e341007850848fe6',  # noqa: E501
+            'sha256:73b0e574accaca6cfdb80fa20ce56574a061bc33e597d7c676b27d9c030ae485',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='altinity/clickhouse-server',
         tag='23.8.11.29.altinitystable',
         digests=(
             'sha256:0e08b41c13d5e2002e34d90b2ebd2a94f026e75a66610966a968396f4ec580f5',  # noqa: E501
@@ -168,10 +177,10 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='altinity/clickhouse-server',
-        tag='23.8.8.21.altinitystable',
+        tag='23.8.16.43.altinitystable',
         digests=(
-            'sha256:0a2c4b9cc0bb16fd67f59329a96b7241d96ab003b8825236e341007850848fe6',  # noqa: E501
-            'sha256:73b0e574accaca6cfdb80fa20ce56574a061bc33e597d7c676b27d9c030ae485',  # noqa: E501
+            'sha256:87bdf613000e07f88655c223a9f335b680fd1fa07c3602d23981be847b6081ac',  # noqa: E501
+            'sha256:87bdf613000e07f88655c223a9f335b680fd1fa07c3602d23981be847b6081ac',  # noqa: E501
         ),
     ),
     Image(
