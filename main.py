@@ -326,6 +326,12 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='valkey/valkey',
+        tag='7.2.11-alpine',
+        digests=(),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='redpandadata/redpanda',
         tag='v22.3.23',
         digests=(
