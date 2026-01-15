@@ -326,17 +326,20 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
-        source='valkey/valkey',
-        tag='7.2.11-alpine',
-        digests=(),
-    ),
-    Image(
-        registry='registry-1.docker.io',
         source='redpandadata/redpanda',
         tag='v22.3.23',
         digests=(
             'sha256:5bb4da6e91eeaeecc693289bcc5fa91c46dc68b3b128e878bb7d2a221ad65c3b',  # noqa: E501
             'sha256:22fbd63c5b7480c584fe6f3408e92cad01e2d1c2b47128e680146ce9a2500d52',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='valkey/valkey',
+        tag='7.2.11-alpine',
+        digests=(
+            'sha256:1263a55147fd4a53f8ae56c15142e68bfe1a0cc779fbb14f42763784f3cde949',  # noqa: E501
+            'sha256:ea62120f88d7bdeb89234474a4ce2874a313098adc8d10d111109871e9d59869',  # noqa: E501
         ),
     ),
     Image(
