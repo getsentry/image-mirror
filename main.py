@@ -197,17 +197,35 @@ IMAGES = (
         source='library/postgres',
         tag='14',
         digests=(
-            'sha256:8769dc9a6cc47201df7112475f22c400cd734880b51511efbd2b581f19ebb59a',  # noqa: E501
-            'sha256:2c301a800817b23763b976b80e7c3579284afcc9d9ff6f968ecb524da48383a1',  # noqa: E501
+            'sha256:5061fbf3cd01dbcfd198944203c6549d544b75d267f47d92ad5b7b3cd6dc56d7',  # noqa: E501
+            'sha256:8c03050c09fd0254df8bffd338a94441e868ab741e5e8d5f1a1d7b37478c113d',  # noqa: E501
         ),
     ),
     Image(
         registry='registry-1.docker.io',
         source='library/postgres',
-        tag='14-alpine',  # 14.11
+        tag='14-alpine',
         digests=(
-            'sha256:72b17e06ac53e62495270c850c1dd289580fca05491bcac45cd43c0c8047b6ef',  # noqa: E501
-            'sha256:ac4ca373551069f5cceb157bc4ba7fefc67069f3cf7dfb96fa3fbfece9888d5f',  # noqa: E501
+            'sha256:c6e19d4a7f359b684fe159348f4d97ed801df5580c2de7f980d191c7f35a6dea',  # noqa: E501
+            'sha256:321d83064cdb93992ffcd0e442ff08cd6d754af1bacecaa80bd14685e5c8da25',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/postgres',
+        tag='17',
+        digests=(
+            'sha256:827e1dd011a36ac64a7d413853223788c32aab4e82943261a15aef06a5e1e3ee',  # noqa: E501
+            'sha256:d5f5c7c99772e4e960470c60fdf970809f14305518dd5287144116d9e8471f90',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/postgres',
+        tag='17-alpine',
+        digests=(
+            'sha256:3d63573deafcc390a58ffa93721f48d544f520e72ceea7fe69aa04c5b0836e12',  # noqa: E501
+            'sha256:9717f062a3e2a9d9d6830155a33faadf95dbaa0bc1e8eb1a6d3e9ed569a5a21c',  # noqa: E501
         ),
     ),
     Image(
@@ -233,8 +251,8 @@ IMAGES = (
         source='library/rabbitmq',
         tag='3-management',
         digests=(
-            'sha256:e2de39b422da7d4b71b956f786b0231493b5c52cd2879b3bba1993a2037d3498',  # noqa: E501
-            'sha256:6a8a10b97d1902b2a5edc1179640329767609d3fc21a2893e0ad96e778de1452',  # noqa: E501
+            'sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920',  # noqa: E501
+            'sha256:8689ddfceca1ff1ecfeaa6619cb9cfc73570cf5fa022d3d904cdb065da1f925d',  # noqa: E501
         ),
     ),
     Image(
