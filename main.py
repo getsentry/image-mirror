@@ -197,8 +197,8 @@ IMAGES = (
         source='library/postgres',
         tag='14',
         digests=(
-            'sha256:5061fbf3cd01dbcfd198944203c6549d544b75d267f47d92ad5b7b3cd6dc56d7',  # noqa: E501
-            'sha256:8c03050c09fd0254df8bffd338a94441e868ab741e5e8d5f1a1d7b37478c113d',  # noqa: E501
+            'sha256:b7bc018398a6dcf4055b5d00ab3cbf08785953a2757a1822b38e60badd35ad95',  # noqa: E501
+            'sha256:50d1e1b3c0b3e951d53be779310d537014b8f20eb09b29c54c5dc2f2940e4789',  # noqa: E501
         ),
     ),
     Image(
@@ -206,8 +206,8 @@ IMAGES = (
         source='library/postgres',
         tag='14-alpine',
         digests=(
-            'sha256:c6e19d4a7f359b684fe159348f4d97ed801df5580c2de7f980d191c7f35a6dea',  # noqa: E501
-            'sha256:321d83064cdb93992ffcd0e442ff08cd6d754af1bacecaa80bd14685e5c8da25',  # noqa: E501
+            'sha256:b66f1f819fe87de88ddfaff72035634913de17b066ab50f6cc0e765c168e4370',  # noqa: E501
+            'sha256:b59c0f24d10e0fa0dec3d342e33334ddeb8a3c0beb541c336164af2adfbe31dc',  # noqa: E501
         ),
     ),
     Image(
@@ -215,8 +215,8 @@ IMAGES = (
         source='library/postgres',
         tag='17',
         digests=(
-            'sha256:827e1dd011a36ac64a7d413853223788c32aab4e82943261a15aef06a5e1e3ee',  # noqa: E501
-            'sha256:d5f5c7c99772e4e960470c60fdf970809f14305518dd5287144116d9e8471f90',  # noqa: E501
+            'sha256:c45202f004c3a3188d1735ccb0967a0c6b1169a9d08e732c854d08f8fe456343',  # noqa: E501
+            'sha256:485356b847a5c89efa454098485b07b9ed663096446361ec0fa997974666500f',  # noqa: E501
         ),
     ),
     Image(
@@ -224,8 +224,26 @@ IMAGES = (
         source='library/postgres',
         tag='17-alpine',
         digests=(
-            'sha256:3d63573deafcc390a58ffa93721f48d544f520e72ceea7fe69aa04c5b0836e12',  # noqa: E501
-            'sha256:9717f062a3e2a9d9d6830155a33faadf95dbaa0bc1e8eb1a6d3e9ed569a5a21c',  # noqa: E501
+            'sha256:5a6fcbc5d93831991d2386fa634509b3c49a1ac5ffb70c13c2322840f821d7e7',  # noqa: E501
+            'sha256:8e84d8ceac078763474c89cac6d2032899c050ce9f8b9c259b88e1445cd14445',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/postgres',
+        tag='18',
+        digests=(
+            'sha256:41da01536bc3ae26308cefb0c57235e7488001360bdb15191eb0b7955b570299',  # noqa: E501
+            'sha256:f6902dfddea256a7bf788aefabbf10e5305ea348693caa4c741795559044001a',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/postgres',
+        tag='18-alpine',
+        digests=(
+            'sha256:15b46a9c5a6b361eb4c0ce8d689365bf49fbf6802e615dce4e5e2326b3213e15',  # noqa: E501
+            'sha256:563d9a314daa3a9f8e3249e217514210a747970c36d50d83ae5e9dc6749fe354',  # noqa: E501
         ),
     ),
     Image(
