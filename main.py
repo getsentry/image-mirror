@@ -197,8 +197,8 @@ IMAGES = (
         source='library/postgres',
         tag='14',
         digests=(
-            'sha256:5c5a001071d87aeffba94efe7f00aeb1ee2f1950d074bc6abad69375252eddd9',  # noqa: E501
-            'sha256:9ca2ab07c78e019f9e59ef8be7dd9e72a0f859e7f37281c7ac3b06c88133fe28',  # noqa: E501
+            'sha256:b7bc018398a6dcf4055b5d00ab3cbf08785953a2757a1822b38e60badd35ad95',  # noqa: E501
+            'sha256:50d1e1b3c0b3e951d53be779310d537014b8f20eb09b29c54c5dc2f2940e4789',  # noqa: E501
         ),
     ),
     Image(
@@ -215,8 +215,8 @@ IMAGES = (
         source='library/postgres',
         tag='17',
         digests=(
-            'sha256:192f81bbac9020895f0a17244e13f301717ff8d68f5d846856c7d13caacc04cc',  # noqa: E501
-            'sha256:f413d28916a0daab411998a7b10697c972592b91bab4d651d61ba48a43d4c909',  # noqa: E501
+            'sha256:c45202f004c3a3188d1735ccb0967a0c6b1169a9d08e732c854d08f8fe456343',  # noqa: E501
+            'sha256:485356b847a5c89efa454098485b07b9ed663096446361ec0fa997974666500f',  # noqa: E501
         ),
     ),
     Image(
@@ -233,8 +233,8 @@ IMAGES = (
         source='library/postgres',
         tag='18',
         digests=(
-            'sha256:bfae840554bdbd4e9f8d097d8e23ffda8aac82866e04ea0d6bc09647234dd359',  # noqa: E501
-            'sha256:e2af5e8c9524b1facb508201a8fb844118a2ee12a688eb2b7d107477c10086bd',  # noqa: E501
+            'sha256:41da01536bc3ae26308cefb0c57235e7488001360bdb15191eb0b7955b570299',  # noqa: E501
+            'sha256:f6902dfddea256a7bf788aefabbf10e5305ea348693caa4c741795559044001a',  # noqa: E501
         ),
     ),
     Image(
