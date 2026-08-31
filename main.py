@@ -152,6 +152,15 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='clickhouse/clickhouse-server',
+        tag='26.8.1.2041',
+        digests=(
+            'sha256:24292a4b0041cbdefb3ac8dc071f250badacb2a1959c8606dc2c916e72a3188f',  # noqa: E501
+            'sha256:70edee918872c93de512765edafa68758dd93614d77ff9e7c64e6585c4300562',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='checkr/flagr',
         tag='latest',
         digests=(
