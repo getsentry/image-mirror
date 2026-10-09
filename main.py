@@ -108,6 +108,15 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='altinity/clickhouse-server',
+        tag='22.8.15.25.altinitystable',
+        digests=(
+            'sha256:99d52fc10915136234a3b902b16d53f0ee80cd4f9149064acc30c89e54d06cf9',  # noqa: E501
+            'sha256:2935d3849fcdf3c9a24883522630758a6f017c7b48a252f6e54e8fc188ccd0cc',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='altinity/clickhouse-server',
         tag='24.8.11.51285.altinitystable',
         digests=(
             'sha256:65b4fed146dd9fa4fc7b0eff17adbeb3c1eb3e5d3c37fc2f635913eafc22b7a5',  # noqa: E501
@@ -161,19 +170,19 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='checkr/flagr',
+        tag='latest',
+        digests=(
+            'sha256:407d7099d6ce7e3632b6d00682a43028d75d3b088600797a833607bd629d1ed5',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='clickhouse/clickhouse-server',
         tag='26.8.1.2041',
         digests=(
             'sha256:24292a4b0041cbdefb3ac8dc071f250badacb2a1959c8606dc2c916e72a3188f',  # noqa: E501
             'sha256:70edee918872c93de512765edafa68758dd93614d77ff9e7c64e6585c4300562',  # noqa: E501
-        ),
-    ),
-    Image(
-        registry='registry-1.docker.io',
-        source='checkr/flagr',
-        tag='latest',
-        digests=(
-            'sha256:407d7099d6ce7e3632b6d00682a43028d75d3b088600797a833607bd629d1ed5',  # noqa: E501
         ),
     ),
     Image(
@@ -204,10 +213,54 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='confluentinc/cp-kafka',
+        tag='7.9.0',
+        digests=(
+            'sha256:e6b87a4a8ca07aadba9c04d86515a340f67cd11ca6160c9b07205f3d88dfb5f1',  # noqa: E501
+            'sha256:0ec55a5b2d80222b7ca87d3d0716347151b81fa385d73760ac73a079583e328c',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='confluentinc/cp-zookeeper',
         tag='6.2.0',
         digests=(
             'sha256:9a69c03fd1757c3154e4f64450d0d27a6decb0dc3a1e401e8fc38e5cea881847',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='google/cloud-sdk',
+        tag='588.0.0',
+        digests=(
+            'sha256:f36908a982a2d59b7b9d496bcd11371e58956ff55b9748dc08b5b2d20303eac0',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/alpine',
+        tag='3.16.2',
+        digests=(
+            'sha256:1304f174557314a7ed9eddb4eab12fed12cb0cd9809e4c28f29af86979a3c870',  # noqa: E501
+            'sha256:922df7f9352943c7447dbc07c53563e6971fce3100d2ef2b8368b1ba9aac605d',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/alpine',
+        tag='3.22.1',
+        digests=(
+            'sha256:eafc1edb577d2e9b458664a15f23ea1c370214193226069eb22921169fc7e43f',  # noqa: E501
+            'sha256:4562b419adf48c5f3c763995d6014c123b3ce1d2e0ef2613b189779caa787192',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/debian',
+        tag='12.15-slim',
+        digests=(
+            'sha256:a4672c0cb26fbdde88e38fa2dfb6c681942306680e41e4378b28770b6e79ee91',  # noqa: E501
+            'sha256:a1b86db52ce3daef089e45aabe36dfec4091f82464c25c1fdcf03de197cbe82a',  # noqa: E501
         ),
     ),
     Image(
@@ -217,6 +270,15 @@ IMAGES = (
         digests=(
             'sha256:48cb7207e3d34871893fa1628f3a4984375153e9942facf82e25935b0a633c8a',  # noqa: E501
             'sha256:fab6966ea6418a38663d63aa904b4de729cdf51cd90c22a70ea4d234cb4b37a4',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/node',
+        tag='22.23.3-alpine',
+        digests=(
+            'sha256:2c752226d477b4a886378baa95b9af252be59301b725fdb0b7e15208131505a8',  # noqa: E501
+            'sha256:85cdd100016a2e09927c0776bb7ebebcfefce5cd0af49893ada91cbc4d78ee22',  # noqa: E501
         ),
     ),
     Image(
@@ -235,6 +297,15 @@ IMAGES = (
         digests=(
             'sha256:b66f1f819fe87de88ddfaff72035634913de17b066ab50f6cc0e765c168e4370',  # noqa: E501
             'sha256:b59c0f24d10e0fa0dec3d342e33334ddeb8a3c0beb541c336164af2adfbe31dc',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/postgres',
+        tag='15.19',
+        digests=(
+            'sha256:a5f9ead8ed7cb25abc36bea51fb9bb2be8d5579ed4ef3d28876027e438391ff0',  # noqa: E501
+            'sha256:7edb00ef081f792e6b08ff2990bb72de1b842581de7cfe516d63c9ce293b26ab',  # noqa: E501
         ),
     ),
     Image(
@@ -294,10 +365,37 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='library/python',
+        tag='3.12.9-bookworm',
+        digests=(
+            'sha256:400676191e9a6e946575345cfaf2100f874a40220818d20b5edf8afa4b39a993',  # noqa: E501
+            'sha256:1a52f50baf2ca1704a4a383acfea5de12053613318da621abbc03daed292fe98',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/python',
         tag='3.13.12-slim-trixie',
         digests=(
             'sha256:f1fbe55d40a15f6b118d8688b2c762bb57309b96c30d561435e91a13fd97780c',  # noqa: E501
             'sha256:38c55d91fcc578329971016dbe8dc059f37289984ed1c5835c05b36b3e1b6abb',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/python',
+        tag='3.13.15-slim-trixie',
+        digests=(
+            'sha256:37134a49d21d2120e4c4d73bb76f8a4ab9aef31f096f7ec2ead48c2feead4332',  # noqa: E501
+            'sha256:e2a5fce94bd761967528a12f16d707c2613e1522f3f2d77fa45766f45962547f',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/python',
+        tag='3.14.4-slim-bookworm',
+        digests=(
+            'sha256:db5942d111df72110e7a67da3fc5159e83ac85cd24808b91bdc4769e166ed1b7',  # noqa: E501
+            'sha256:8cc758368ddbbc2ac75f93c734e34e3b1bbb3751f0b56f5a1e1e0acc0c55d46f',  # noqa: E501
         ),
     ),
     Image(
@@ -329,11 +427,83 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='library/redis',
+        tag='7.4.11-alpine',
+        digests=(
+            'sha256:ca0acbb137c1dc3339c8b147a58fd6f42775d4599327b50e7b116c23de501af2',  # noqa: E501
+            'sha256:1f09a89a207d794a8c61d9edfc26e7c58427de10ccef7c5d18d638df79a63b85',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/rust',
+        tag='1.96.1-bookworm',
+        digests=(
+            'sha256:d99f7b31f49909348dc59b51f3c95d1efded1701ffb222f095aaab7de3c4abd8',  # noqa: E501
+            'sha256:809725748b728a8e1f8621a3c76e49fba8780c16d99ceda20abdb44d32665c30',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/ubuntu',
+        tag='noble-20260917',
+        digests=(
+            'sha256:f610ab94648195aa356059f5b41d6085c9d4d903c072430cdd1af7bdb646106b',  # noqa: E501
+            'sha256:08571ca13e00ca07a2a84eab83a959b4242e22cceb16486a11bef1428c9e93a7',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='moby/buildkit',
+        tag='v0.33.1',
+        digests=(
+            'sha256:98cc6a3fc46220d00f8224ae483f3274fc874e9be8d7dd1e2e2c5481209228b5',  # noqa: E501
+            'sha256:3ad6bb9bc8c78c0069d03247adb9a59b3b43d68e55353e876e558b888c6c1768',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='nvidia/cuda',
+        tag='12.8.0-base-ubuntu24.04',
+        digests=(
+            'sha256:42bb05f545fbb2583bada43c553e04c3f2ef711b755ff18bab8b29bfa9d8d3c6',  # noqa: E501
+            'sha256:c7890174d7180c01bac52d3f69e052b10e1332efbd3e322a11bb83400c990e2d',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='pgvector/pgvector',
+        tag='0.8.7-pg14-bookworm',
+        digests=(
+            'sha256:1f9ebec0314d93fd6c612543e84de327f80bf3d643cfb99d6279be70eb2d949e',  # noqa: E501
+            'sha256:3c278e3fe2cb5595e78fa4e5a49ea44184f8a74dc92d08ed83eaa09fd5630402',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='redpandadata/redpanda',
         tag='v22.3.23',
         digests=(
             'sha256:5bb4da6e91eeaeecc693289bcc5fa91c46dc68b3b128e878bb7d2a221ad65c3b',  # noqa: E501
             'sha256:22fbd63c5b7480c584fe6f3408e92cad01e2d1c2b47128e680146ce9a2500d52',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='tonistiigi/binfmt',
+        tag='qemu-v10.2.3-68',
+        digests=(
+            'sha256:465d3fdd28d0f2b871ba4b4ec98bd183292e96167f00d9fd40bd249f8632d705',  # noqa: E501
+            'sha256:b4c6a09270133b3c5b4dff94f83067df4dd27eced195fc6a1dbad102999e24dd',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='tufin/oasdiff',
+        tag='v1.33.0',
+        digests=(
+            'sha256:8a1e0be7c661f2c103020389cb022e0e76ca91f931e3eacf51d30512b724ab0e',  # noqa: E501
+            'sha256:2ddfc622e73d098603de1a54c6513ac2d217ae9077b5047cd29520bab8bf0092',  # noqa: E501
         ),
     ),
 )
