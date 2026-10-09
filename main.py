@@ -293,6 +293,15 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='library/python',
+        tag='3.13.12-slim-trixie',
+        digests=(
+            'sha256:f1fbe55d40a15f6b118d8688b2c762bb57309b96c30d561435e91a13fd97780c',  # noqa: E501
+            'sha256:38c55d91fcc578329971016dbe8dc059f37289984ed1c5835c05b36b3e1b6abb',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='library/rabbitmq',
         tag='3-management',
         digests=(
