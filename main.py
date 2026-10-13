@@ -445,6 +445,15 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='library/rust',
+        tag='1.96.1-trixie',
+        digests=(
+            'sha256:897292968f3e2c7aaba68bf8e6239b61994a8adbdd09e49bd866b69822b98af9',  # noqa: E501
+            'sha256:a5f124a141e54e2527df4defa1631f8f878b48f7e818b203c30e27a50c513a4b',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='library/ubuntu',
         tag='noble-20260917',
         digests=(
