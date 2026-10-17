@@ -17,5 +17,5 @@ the add-an-image workflow.
 
 - `update` finds `IMAGES` with a regex. Keep `IMAGES = (` and its closing `)`
   at column 0 with only indented, non-blank lines between them. Otherwise
-  `update` silently writes nothing.
+  `update` exits with an error.
 - Pin digests only for architectures in `ARCHS`.

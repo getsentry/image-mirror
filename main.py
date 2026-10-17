@@ -12,7 +12,7 @@ import urllib.request
 from typing import Mapping
 from typing import NamedTuple
 
-ARCHS = frozenset(('amd64', 'arm64', 'arm64/v8'))
+ARCHS = frozenset(('amd64', 'arm64'))
 
 LIST = 'application/vnd.docker.distribution.manifest.list.v2+json'
 SINGLE = 'application/vnd.docker.distribution.manifest.v2+json'
@@ -60,12 +60,12 @@ def _digests(registry: str, image: str, tag: str) -> list[tuple[str, str]]:
     req = urllib.request.Request(
         f'https://{registry}/v2/{image}/manifests/{tag}',
         headers={
-            'Authorization': f'Bearer {token}',
             # annoyingly, even if we only "Accept" the list, docker.io will
             # send us a single manifest
             'Accept': f'{LIST}, {INDEX}, {SINGLE};q=.9',
         },
     )
+    req.add_unredirected_header('Authorization', f'Bearer {token}')
     resp = urllib.request.urlopen(req)
     ret = json.load(resp)
     if resp.headers['Content-Type'] in {LIST, INDEX}:
@@ -77,8 +77,10 @@ def _digests(registry: str, image: str, tag: str) -> list[tuple[str, str]]:
         blob = ret['config']['digest']
         req = urllib.request.Request(
             f'https://{registry}/v2/{image}/blobs/{blob}',
-            headers={'Authorization': f'Bearer {token}'},
         )
+        # registries redirect blob downloads to object storage, which
+        # rejects requests that also carry the registry's bearer token
+        req.add_unredirected_header('Authorization', f'Bearer {token}')
         ret = json.load(urllib.request.urlopen(req))
         return [(ret['architecture'], resp.headers['Docker-Content-Digest'])]
     else:
@@ -549,7 +551,11 @@ def main() -> int:
         with open(__file__) as f:
             src = f.read()
 
-        src = re.sub(r'IMAGES = \(\n( +.+\n)+\)', '\n'.join(lines), src)
+        src, n = re.subn(
+            r'IMAGES = \(\n(?: +\S.*\n)+\)', '\n'.join(lines), src,
+        )
+        if n != 1:
+            raise SystemExit(f'expected 1 IMAGES block, found {n}')
 
         if args.dry_run:
             print(src)

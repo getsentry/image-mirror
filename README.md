@@ -30,10 +30,6 @@ with mutable tags, such as `latest` or `14`, pick up new digests. Run
 `python3 main.py update --dry-run` to print the rewritten file without saving
 it.
 
-`update` fails with HTTP 400 when it reaches a single-architecture entry, such
-as `checkr/flagr:latest`. Until that is fixed, add the new entry's digests by
-hand. Get them with `docker buildx imagetools inspect <image>:<tag>`.
-
 CI runs `python3 main.py sync --dry-run` on pull requests to list the images it
 would push. After merge, CI runs `sync` on `main` and pushes each image that is
 missing one of its pinned digests on ghcr.io.
