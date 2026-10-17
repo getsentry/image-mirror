@@ -552,7 +552,7 @@ def main() -> int:
             src = f.read()
 
         src, n = re.subn(
-            r'IMAGES = \(\n( +.+\n)+\)', '\n'.join(lines), src,
+            r'IMAGES = \(\n(?: +\S.*\n)+\)', '\n'.join(lines), src,
         )
         if n != 1:
             raise SystemExit(f'expected 1 IMAGES block, found {n}')
