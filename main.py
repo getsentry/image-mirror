@@ -285,6 +285,15 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='library/node',
+        tag='22.23.4-alpine',
+        digests=(
+            'sha256:025b8e975a61d94e33abeafaad1255ef44e4898cf1a1b6446860009c72e6d284',  # noqa: E501
+            'sha256:fd4a97c1630a4a0a70117dd7b393e322db316d0489bdf36a0e776e7b235341b0',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='library/postgres',
         tag='14',
         digests=(
@@ -564,7 +573,7 @@ def main() -> int:
                 f.write(src)
     elif args.command == 'sync':
         for img in IMAGES:
-            dest_img = f'getsentry/image-mirror-{img.source.replace("/", "-")}'
+            dest_img = f'getsentry/image-mirror-{img.source.replace('/', '-')}'
 
             try:
                 target_digest_info = _digests('ghcr.io', dest_img, img.tag)
