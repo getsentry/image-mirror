@@ -403,6 +403,15 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='library/python',
+        tag='3.13.17-slim-trixie',
+        digests=(
+            'sha256:d879ed88565a7a3c614b980b369d4a5025a9d057b71f93d09fc6d0b2ca823a18',  # noqa: E501
+            'sha256:fdc02ec63f6f10b14a31159fbccb15b7b85a990ec27d7bf120e725a70fb256d7',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/python',
         tag='3.14.4-slim-bookworm',
         digests=(
             'sha256:db5942d111df72110e7a67da3fc5159e83ac85cd24808b91bdc4769e166ed1b7',  # noqa: E501
