@@ -421,6 +421,15 @@ IMAGES = (
     Image(
         registry='registry-1.docker.io',
         source='library/python',
+        tag='3.14.10-slim-bookworm',
+        digests=(
+            'sha256:0a8fba2dab2d37bf67d3483206ad13acd6f6e15c30149819452135993ed604a6',  # noqa: E501
+            'sha256:192a819d0f605b219136b5f5f91174127d0f39a747844fa5ce71cbeaf913f662',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/python',
         tag='3.14.4-slim-bookworm',
         digests=(
             'sha256:db5942d111df72110e7a67da3fc5159e83ac85cd24808b91bdc4769e166ed1b7',  # noqa: E501
