@@ -258,6 +258,15 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='library/alpine',
+        tag='3.22.7',
+        digests=(
+            'sha256:dc92f017beea8e7f43263073d717f7bc011228c95d5312e440deb4d035bb4eec',  # noqa: E501
+            'sha256:3e07a4f627d12468155eb812785e10f2453a447c346872b47788a62437366764',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='library/debian',
         tag='12.15-slim',
         digests=(
