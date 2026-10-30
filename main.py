@@ -204,6 +204,7 @@ IMAGES = (
             'sha256:ef0af643f169121268267125a84b0d67bf390b921b3efee62e8d772714eb2f16',  # noqa: E501
             'sha256:4842aee4da0c9679ab7558de0685dbec667c49a0b55999378fca7cb87e49b4fd',  # noqa: E501
         ),
+    ),
     Image(
         registry='registry-1.docker.io',
         source='clickhouse/clickhouse-server',
@@ -212,7 +213,6 @@ IMAGES = (
             'sha256:0805f9f529673d2a68d1fb50dfef90f30f1710bb1b62d4c3f1d1a99d37459ecc',  # noqa: E501
             'sha256:46ec9b0b588c2c37ca091e0d636c54db0740f9a9c936ad950dc28c2b552ed7cb',  # noqa: E501
         ),
-    ),
     ),
     Image(
         registry='registry-1.docker.io',
