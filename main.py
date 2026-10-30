@@ -207,6 +207,15 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='clickhouse/clickhouse-server',
+        tag='26.8.36.3',
+        digests=(
+            'sha256:0805f9f529673d2a68d1fb50dfef90f30f1710bb1b62d4c3f1d1a99d37459ecc',  # noqa: E501
+            'sha256:46ec9b0b588c2c37ca091e0d636c54db0740f9a9c936ad950dc28c2b552ed7cb',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='confluentinc/cp-kafka',
         tag='6.2.0',
         digests=(
