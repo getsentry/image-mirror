@@ -519,6 +519,15 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='library/zookeeper',
+        tag='3.6.3',
+        digests=(
+            'sha256:dc945be17c075d2460bb663c854a24be7dc3e58d2e3abfb7c9365cc231d25228',  # noqa: E501
+            'sha256:c9b3b50c35e51208e672bc7f23d881b100ba68bdba227f56f3a5635fc3845aac',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='moby/buildkit',
         tag='v0.33.1',
         digests=(
