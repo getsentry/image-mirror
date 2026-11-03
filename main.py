@@ -571,6 +571,15 @@ IMAGES = (
             'sha256:2ddfc622e73d098603de1a54c6513ac2d217ae9077b5047cd29520bab8bf0092',  # noqa: E501
         ),
     ),
+    Image(
+        registry='registry-1.docker.io',
+        source='valkey/valkey',
+        tag='8.0.12',
+        digests=(
+            'sha256:ed10b4cba1f833b0c36995a5c6894de1ba291f2c39f5e9f0737fc7330e717781',  # noqa: E501
+            'sha256:cf7afeb5fb48d3a8deff4516bda445b56e996b0960f494e985f6b4259bb90afa',  # noqa: E501
+        ),
+    ),
 )
 
 
