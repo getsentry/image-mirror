@@ -294,6 +294,15 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='library/eclipse-temurin',
+        tag='21.0.6_7-jdk-noble',
+        digests=(
+            'sha256:81d5ce47c7818b3a427c108a3a34658fb1b980b287384a8e5d3bc7ce8859a343',  # noqa: E501
+            'sha256:4e637dc592a47c2a18d3ff703c56ae3e68113514ac32e9136bb2000e0627f17e',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='library/memcached',
         tag='1.5-alpine',
         digests=(
