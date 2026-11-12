@@ -330,6 +330,15 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='library/node',
+        tag='22.23.5-alpine',
+        digests=(
+            'sha256:12f54cafa58d0e96554ae05871e29663ff7241836377dc9a7916449b8adb062c',  # noqa: E501
+            'sha256:286344ef340c151df65af44a8c8cf2996c1783073d49b88fabcf90a56ea82023',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='library/postgres',
         tag='14',
         digests=(
