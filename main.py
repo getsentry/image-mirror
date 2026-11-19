@@ -294,6 +294,15 @@ IMAGES = (
     ),
     Image(
         registry='registry-1.docker.io',
+        source='library/debian',
+        tag='13.7-slim',
+        digests=(
+            'sha256:7378260c0a098d27ac206225db5e7d92b8c7c84ea7afccc86eeb513756bbd392',  # noqa: E501
+            'sha256:24a01011d10eba3a023bc8585b9650b8b29021240d4217c05b905e09ef4a5232',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
         source='library/eclipse-temurin',
         tag='21.0.6_7-jdk-noble',
         digests=(
@@ -470,6 +479,15 @@ IMAGES = (
         digests=(
             'sha256:0a8fba2dab2d37bf67d3483206ad13acd6f6e15c30149819452135993ed604a6',  # noqa: E501
             'sha256:192a819d0f605b219136b5f5f91174127d0f39a747844fa5ce71cbeaf913f662',  # noqa: E501
+        ),
+    ),
+    Image(
+        registry='registry-1.docker.io',
+        source='library/python',
+        tag='3.14.10-slim-trixie',
+        digests=(
+            'sha256:ac25e5afbfdb4a94ff99cc24b0345719210133144481480bcba6085efa36a341',  # noqa: E501
+            'sha256:973d41424c3fd81029ac9230bcdec2580fb67b49af9004279001c301182ae868',  # noqa: E501
         ),
     ),
     Image(
